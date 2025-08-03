@@ -12,7 +12,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegisterForm, LoginForm, CreatePostForm, CommentForm
 import os
 
-dotenv.load_dotenv()
 
 def admin_only(f):
     @wraps(f)
