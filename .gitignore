@@ -2,6 +2,7 @@
 # be added to version control and will not be uploaded to Github.
 # For example we ignore the hidden files from Pycharm and VS Code.
 ../day-71-starting-files-blog-for-deployment/.idea/
+../day-69-starting-files-blog-with-users/.idea/
 .vscode
 posts.db
 

@@ -10,7 +10,10 @@ from sqlalchemy import Integer, String, Text, ForeignKey
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegisterForm, LoginForm, CreatePostForm, CommentForm
+import os
+import dotenv
 
+dotenv.load_dotenv()
 
 def admin_only(f):
     @wraps(f)
@@ -21,7 +24,7 @@ def admin_only(f):
     return decorated_function
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -263,4 +266,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
